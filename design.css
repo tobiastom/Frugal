@@ -1,0 +1,206 @@
+/**
+ * https://help.codeux.com/textual/Styles.kb
+ **/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	--background-color: white;
+	--text-color: black;
+	--link-color: #0029EA;
+
+	--topic-background-color: #EEEEEE;
+	--topic-border-color: #9A9A9A;
+}
+
+_html {
+	--background-color: #252525;
+	--text-color: white;
+	--link-color: #4990E2;
+
+	--topic-background-color: #3C3C3C;
+	--topic-border-color: black;
+}
+
+body {
+	font-family: -apple-system !important;
+	margin-bottom: 5px;
+	position: relative;
+	background: var(--background-color);
+}
+
+a {
+	text-decoration: none;
+	color: var(--link-color);
+}
+
+#topic_bar {
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 3px;
+	background: var(--topic-background-color);
+	border-bottom: 1px solid var(--topic-border-color);
+	text-align: center;
+	color: var(--text-color);
+}
+
+[ltype] {
+	padding: 2px 5px;
+	font-size: 0.8rem;
+
+}
+
+[ltype], [ltype] .time {
+	color: #AAAAAA;
+}
+
+[ltype=privmsg] .time {
+	font-size: 0.8em;
+	padding-top: 0.2rem;
+}
+
+[ltype] p {
+	display: flex;
+	justify-content: stretch;
+	margin-left: 0 !important;
+	text-indent: 0 !important;
+}
+
+[ltype] .time {
+	order: 1;
+	flex: 0 0 auto;
+	text-align: right;
+}
+
+[ltype] .message {
+	padding: 1px;
+	padding-left: 10em;
+	flex: 1 1 100%;
+	display: flex;
+	justify-content: stretch;
+}
+
+[ltype=privmsg] {
+	font-size: 1rem;
+}
+
+[ltype=privmsg] .message {
+	padding-left: 0;
+	color: var(--text-color);
+
+	position: relative;
+}
+
+[ltype=privmsg][encrypted=true] .message:before {
+	background: url( 'data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2210%22%20height%3D%2212%22%20viewBox%3D%22489%20716%2010%2012%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23D8D8D8%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22M489%20721h10v7h-10z%22%2F%3E%3Cpath%20d%3D%22M490%20724h8v-4c0-2.21-1.79-4-4-4s-4%201.79-4%204v4zm1.5%200h5v-4c0-1.38-1.12-2.5-2.5-2.5s-2.5%201.12-2.5%202.5v4z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E' ) no-repeat center;
+	background-size: contain;
+	display: block;
+	width: 1em;
+	height: 1em;
+	position: absolute;
+	content: ' ';
+	left: 0;
+	top: 0;
+}
+
+[ltype] .senderContainer {
+	flex: 0 0 8em;
+	text-align: right;
+	padding-right: 0.5rem;
+}
+
+[ltype=topic].message {
+	display: block;
+}
+
+[ltype=topic].message a {
+	color: #AAAAAA;
+	font-weight: normal;
+}
+
+.time_isRepeating {
+	display: none;
+}
+
+.nickname_isRepeating {
+	opacity: 0.1;
+}
+
+.senderContainer [colornumber="0"] { color: #213240; }
+.senderContainer [colornumber="1"] { color: #EC1559; }
+.senderContainer [colornumber="2"] { color: #FAF93C; }
+.senderContainer [colornumber="3"] { color: #561420; }
+.senderContainer [colornumber="4"] { color: #821122; }
+.senderContainer [colornumber="5"] { color: #333333; }
+.senderContainer [colornumber="6"] { color: #D31D8C; }
+.senderContainer [colornumber="7"] { color: #BCDD11; }
+.senderContainer [colornumber="8"] { color: #005381; }
+.senderContainer [colornumber="9"] { color: #0D813D; }
+.senderContainer [colornumber="10"] { color: #F7A700; }
+.senderContainer [colornumber="11"] { color: #3F3F30; }
+.senderContainer [colornumber="12"] { color: #330000; }
+.senderContainer [colornumber="13"] { color: #670000; }
+.senderContainer [colornumber="14"] { color: #A31B00; }
+.senderContainer [colornumber="15"] { color: #C24400; }
+.senderContainer [colornumber="16"] { color: #DD6100; }
+.senderContainer [colornumber="17"] { color: #4B4C3C; }
+.senderContainer [colornumber="18"] { color: #57470C; }
+.senderContainer [colornumber="19"] { color: #2B6088; }
+.senderContainer [colornumber="20"] { color: #0A55A3; }
+.senderContainer [colornumber="21"] { color: #006EBA; }
+.senderContainer [colornumber="22"] { color: #8D1C0C; }
+.senderContainer [colornumber="23"] { color: #FD1B15; }
+.senderContainer [colornumber="24"] { color: #FF6D06; }
+.senderContainer [colornumber="25"] { color: #3EA63B; }
+.senderContainer [colornumber="26"] { color: #4F4F4F; }
+.senderContainer [colornumber="27"] { color: #96D377; }
+.senderContainer [colornumber="28"] { color: #7BF53D; }
+.senderContainer [colornumber="29"] { color: #991D5E; }
+.senderContainer [colornumber="30"] { color: #C42616; }
+.senderContainer [colornumber="31"] { color: #5050C1; }
+.senderContainer [colornumber="32"] { color: #5088C1; }
+.senderContainer [colornumber="33"] { color: #561420; }
+.senderContainer [colornumber="34"] { color: #821122; }
+.senderContainer [colornumber="35"] { color: #333333; }
+.senderContainer [colornumber="36"] { color: #EC1559; }
+.senderContainer [colornumber="37"] { color: #213240; }
+.senderContainer [colornumber="38"] { color: #193D55; }
+.senderContainer [colornumber="39"] { color: #0D813D; }
+.senderContainer [colornumber="40"] { color: #193D55; }
+.senderContainer [colornumber="41"] { color: #C0000B; }
+.senderContainer [colornumber="42"] { color: #FF6800; }
+.senderContainer [colornumber="43"] { color: #662B2D; }
+.senderContainer [colornumber="44"] { color: #B03C0D; }
+.senderContainer [colornumber="45"] { color: #E7371A; }
+.senderContainer [colornumber="46"] { color: #EAB239; }
+.senderContainer [colornumber="47"] { color: #193D55; }
+.senderContainer [colornumber="48"] { color: #4D7086; }
+.senderContainer [colornumber="49"] { color: #2B877E; }
+.senderContainer [colornumber="50"] { color: #8A8C81; }
+.senderContainer [colornumber="51"] { color: #5F8183; }
+.senderContainer [colornumber="52"] { color: #C6064F; }
+.senderContainer [colornumber="53"] { color: #F93981; }
+.senderContainer [colornumber="54"] { color: #E7C51B; }
+.senderContainer [colornumber="55"] { color: #8173B1; }
+.senderContainer [colornumber="56"] { color: #000014; }
+.senderContainer [colornumber="57"] { color: #2A3B63; }
+.senderContainer [colornumber="58"] { color: #717C8C; }
+.senderContainer [colornumber="59"] { color: #F56203; }
+.senderContainer [colornumber="60"] { color: #FF0000; }
+.senderContainer [colornumber="61"] { color: #D24B00; }
+.senderContainer [colornumber="62"] { color: #90620C; }
+.senderContainer [colornumber="63"] { color: #225928; }
+.senderContainer [colornumber="64"] { color: #3D367D; }
+.senderContainer [colornumber="65"] { color: #5D236E; }
+.senderContainer [colornumber="66"] { color: #D12C8B; }
+.senderContainer [colornumber="67"] { color: #991441; }
+.senderContainer [colornumber="68"] { color: #585858; }
+.senderContainer [colornumber="69"] { color: #678090; }
+.senderContainer [colornumber="70"] { color: #6F9DBE; }
