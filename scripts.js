@@ -2,19 +2,19 @@
 
 var previousTime = 0;
 var previousNickname = null;
-var minimalTimeDistance = 1000 * 60 * 5;
+var minimalTimeDistance = 1000 * 60;
 
 Textual.viewBodyDidLoad = function() {
 	Textual.fadeOutLoadingScreen(1.00, 0.95);
 }
 
-Textual.newMessagePostedToView = function(line) {
+Textual.messageAddedToView = function (line, fromBuffer) {
     var element = document.getElementById("line-" + line);
 
 	ConversationTracking.updateNicknameWithNewMessage(element);
 
 	var timeElement = element.querySelector( '.time' );
-	var currentTime = new Date( element.getAttribute( 'timestamp' ) * 1000 );
+	var currentTime = new Date( element.dataset.timestamp * 1000 );
 	var isSmaller = false;
 	if ( currentTime - previousTime < minimalTimeDistance ) {
 		isSmaller = true;
@@ -22,13 +22,14 @@ Textual.newMessagePostedToView = function(line) {
 	}
 
 	previousTime = currentTime;
-	if ( element.getAttribute( 'ltype' ) !== 'privmsg' ) {
+	if ( element.dataset.command !== 'privmsg' ) {
 		previousUser = null;
 		return;
 	}
 
 	var senderElement = element.querySelector( '.sender' );
-	var currentNickname = senderElement.getAttribute( 'nickname' );
+	var currentNickname = senderElement.dataset.nickname;
+	console.log(currentNickname);
 	if ( currentNickname && currentNickname == previousNickname ) {
 		senderElement.classList.add( 'nickname_isRepeating' );
 	}

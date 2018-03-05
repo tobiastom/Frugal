@@ -38,7 +38,7 @@ a {
 	color: var(--link-color);
 }
 
-#topic_bar {
+#topicBar {
 	position: fixed;
 	z-index: 1;
 	top: 0;
@@ -51,35 +51,35 @@ a {
 	color: var(--text-color);
 }
 
-[ltype] {
+[data-command] {
 	padding: 2px 5px;
 	font-size: 0.8rem;
 
 }
 
-[ltype], [ltype] .time {
+[data-command], [data-command] .time {
 	color: #AAAAAA;
 }
 
-[ltype=privmsg] .time {
+[data-command=privmsg] .time {
 	font-size: 0.8em;
 	padding-top: 0.2rem;
 }
 
-[ltype] p {
+[data-command] p {
 	display: flex;
 	justify-content: stretch;
 	margin-left: 0 !important;
 	text-indent: 0 !important;
 }
 
-[ltype] .time {
+[data-command] .time {
 	order: 1;
 	flex: 0 0 auto;
 	text-align: right;
 }
 
-[ltype] .message {
+[data-command] .message {
 	padding: 1px;
 	padding-left: 10em;
 	flex: 1 1 100%;
@@ -87,18 +87,18 @@ a {
 	justify-content: stretch;
 }
 
-[ltype=privmsg] {
+[data-command=privmsg] {
 	font-size: 1rem;
 }
 
-[ltype=privmsg] .message {
+[data-command=privmsg] .message {
 	padding-left: 0;
 	color: var(--text-color);
 
 	position: relative;
 }
 
-[ltype=privmsg][encrypted=true] .message:before {
+[data-command=privmsg][encrypted=true] .message:before {
 	background: url( 'data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2210%22%20height%3D%2212%22%20viewBox%3D%22489%20716%2010%2012%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23D8D8D8%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22M489%20721h10v7h-10z%22%2F%3E%3Cpath%20d%3D%22M490%20724h8v-4c0-2.21-1.79-4-4-4s-4%201.79-4%204v4zm1.5%200h5v-4c0-1.38-1.12-2.5-2.5-2.5s-2.5%201.12-2.5%202.5v4z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E' ) no-repeat center;
 	background-size: contain;
 	display: block;
@@ -110,17 +110,41 @@ a {
 	top: 0;
 }
 
-[ltype] .senderContainer {
+[data-command] .senderContainer {
 	flex: 0 0 8em;
 	text-align: right;
 	padding-right: 0.5rem;
+	font-weight: bold;
 }
 
-[ltype=topic].message {
+.inlineSender {
+	font-weight: bold;
+}
+
+.message_buffer_session_indicator {
+	display: flex;
+	padding: 0 0.5rem;
+	justify-content: stretch;
+	align-items: center;
+}
+
+.message_buffer_session_indicator hr {
+	flex: 1 1 100%;
+	height: 1px;
+	border: 0;
+	background: #aaa;
+}
+
+.message_buffer_session_indicator span {
+	white-space: nowrap;
+	color: #aaa;
+	padding: 0 0.5rem;
+}
+[data-command=topic].message {
 	display: block;
 }
 
-[ltype=topic].message a {
+[data-command=topic].message a {
 	color: #AAAAAA;
 	font-weight: normal;
 }
@@ -130,7 +154,7 @@ a {
 }
 
 .nickname_isRepeating {
-	opacity: 0.1;
+	opacity: 0;
 }
 
 .senderContainer [colornumber="0"] { color: #213240; }
